@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nizar Killfeed</title>
+<link rel="preload" href="fonts/DemonSlave.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Blood overlay (fullscreen, behind everything interactive) -->
+    <div id="blood"></div>
+
+    <!-- Kill flash (accent vignette pulse on own kills) -->
+    <div id="flash"></div>
+
+    <!-- The killfeed itself -->
+    <div id="feed"></div>
+
+    <!-- Position editor overlay -->
+    <div id="posedit" class="hidden">
+        <div class="pos-hint">
+            <span class="pos-hint-title">EDIT POSITION</span>
+            <span>Drag the killfeed anywhere on screen · Arrow keys for fine tuning</span>
+            <div class="pos-hint-btns">
+                <button id="pos-save" class="btn btn-primary">Save Position</button>
+                <button id="pos-cancel" class="btn">Cancel</button>
+            </div>
+        </div>
+        <div id="pos-ghost"></div>
+    </div>
+
+    <!-- Kill effect preview mode (UI hidden, effect fires on the real screen) -->
+    <div id="fxpreview" class="hidden">
+        <div class="fxprev-hud">
+            <button class="arrow arrow-l" id="fxprev-l"></button>
+            <div class="fxprev-mid">
+                <span class="fxprev-name" id="fxprev-name">Pulse</span>
+                <span class="fxprev-hint">◄ ► change effect &nbsp;·&nbsp; ENTER replay &nbsp;·&nbsp; H headshot &nbsp;·&nbsp; ESC back</span>
+            </div>
+            <button class="arrow arrow-r" id="fxprev-r"></button>
+        </div>
+    </div>
+
+    <!-- Editor -->
+    <div id="editor" class="hidden">
+        <div class="ed-wrap">
+            <div class="ed-panel">
+                <div class="ed-body">
+                    <div class="ed-col">
+                        <span class="ed-sec-label"><span class="sec-ico"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg></span>Killfeed Variants</span>
+                        <div class="ed-variants" id="ed-variants"></div>
+                    </div>
+                    <div class="ed-col">
+                        <div class="ed-options" id="ed-options"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="img/weapons/manifest.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
